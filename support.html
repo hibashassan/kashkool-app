@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kashkool Support</title>
+<meta name="description" content="Help with Kashkool: getting started, servers, subtitles, Apple TV and Android TV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink0: #14130E; --ink1: #1C1B15; --ink2: #25241D; --line: #3A382F;
+    --text: #EEE9DC; --mute: #A6A08F; --note: #C9B98F; --saffron: #F2B13C; --on-saffron: #1E1607;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--ink0); color: var(--text);
+    font: 17px/1.6 "Readex Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 16px 96px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+  header svg { width: 44px; height: 44px; flex: none; }
+  header .brand { font-weight: 700; font-size: 22px; letter-spacing: -0.01em; }
+  header .brand span { color: var(--mute); font-weight: 400; margin-inline-start: 8px; }
+  nav.lang { margin-inline-start: auto; display: flex; gap: 6px; }
+  nav.lang a {
+    color: var(--mute); text-decoration: none; font-size: 14px; padding: 6px 12px;
+    border-radius: 999px; background: var(--ink2);
+  }
+  nav.lang a:hover, nav.lang a:focus-visible { color: var(--saffron); outline: none; }
+  h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.15; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.015em; }
+  h2 { font-size: 20px; font-weight: 500; margin: 40px 0 10px; }
+  .lede { font-size: 19px; line-height: 1.5; color: var(--text); margin: 0 0 24px; }
+  .mail {
+    display: inline-block; background: var(--saffron); color: var(--on-saffron); text-decoration: none;
+    font-weight: 500; padding: 12px 22px; border-radius: 999px;
+  }
+  .mail:focus-visible { outline: 3px solid #F7D08A; outline-offset: 3px; }
+  details { background: var(--ink1); border-radius: 16px; padding: 4px 20px; margin: 10px 0; }
+  summary { cursor: pointer; padding: 14px 0; font-weight: 500; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; float: inline-end; color: var(--mute); }
+  details[open] summary::after { content: "\2212"; }
+  details p { margin: 0 0 16px; color: var(--text); }
+  ol { padding-inline-start: 22px; } li { margin: 6px 0; }
+  .note { color: var(--note); font-size: 15px; }
+  .note::before { content: "\270E\00a0"; }
+  a { color: var(--saffron); }
+  code { font-size: 0.92em; background: var(--ink2); padding: 1px 6px; border-radius: 6px; direction: ltr; unicode-bidi: isolate; }
+  section + section { margin-top: 88px; padding-top: 48px; border-top: 1px solid var(--line); }
+  [dir="rtl"] { line-height: 1.8; }
+  [dir="rtl"] h1 { letter-spacing: 0; }
+  footer { margin-top: 72px; color: var(--mute); font-size: 14px; }
+  header { flex-wrap: wrap; }
+  @media (max-width: 520px) { nav.lang { margin-inline-start: 0; flex-basis: 100%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg viewBox="0 0 1024 1024" aria-hidden="true"><g transform="rotate(-14 512 512)"><path d="M 152 384 A 360 300 0 0 0 872 384 A 360 125 0 0 1 152 384 Z" fill="#F2B13C"/><path d="M 152 384 A 360 44 0 0 1 872 384" fill="none" stroke="#F2B13C" stroke-width="26" stroke-linecap="round" opacity="0.42"/></g></svg>
+    <div class="brand">Kashkool<span lang="ar">كشكول</span></div>
+    <nav class="lang"><a href="#en">English</a><a href="#ar" lang="ar">العربية</a></nav>
+  </header>
+
+  <section id="en" lang="en" dir="ltr">
+    <h1>Help</h1>
+    <p class="lede">Kashkool gathers every shelf your household watches from into one library: your Jellyfin servers, your friends' servers and the streaming services you pay for. Stuck? Write to us and a person answers.</p>
+    <p><a class="mail" href="mailto:hello@thecollectivemind.me?subject=Kashkool">Email support</a></p>
+
+    <h2>Getting started</h2>
+    <ol>
+      <li><strong>With an invite:</strong> choose "I have an invite". On a phone, scan the code someone in your household shows you; on a TV, type the home address and code.</li>
+      <li><strong>With your own server:</strong> on the first screen choose "Advanced: add a server yourself" (later: Settings, then Add a server). Type its https address, then sign in with your Jellyfin username and password, or with Quick Connect on a TV.</li>
+    </ol>
+
+    <h2>Questions</h2>
+    <details><summary>A server says it's asleep</summary><p>Kashkool couldn't reach it in time. Check the computer it runs on is awake and online. Kashkool keeps trying in the background and shows the same title from another server if one has it.</p></details>
+    <details><summary>My server's address is refused</summary><p>Kashkool only connects over https, so your sign-in never travels in the clear. Use your server's https address (a Tailscale <code>*.ts.net</code> address works), not <code>http://192.168…</code>.</p></details>
+    <details><summary>A film won't play</summary><p>Tap Try again, or Choose another copy if a friend has it too. If the file is damaged on the server, Kashkool says so; the server owner can replace it.</p></details>
+    <details><summary>No subtitles in my language</summary><p>In the player, open Subtitles and choose "Find subtitles…". Your server needs a subtitle plugin and your account needs permission to manage subtitles; Kashkool tells you which one is missing.</p></details>
+    <details><summary>Where to watch shows nothing</summary><p>Streaming answers come from your household's Kashkool service. Without it, Kashkool still plays everything on your servers.</p></details>
+    <details><summary>Arabic or English?</summary><p>Settings, then Language. Kashkool follows your device by default and turns the whole layout right to left in Arabic.</p></details>
+    <details><summary>Apple TV and Android TV</summary><p>The same app runs on both. Sign in with Quick Connect so you never type a password with a remote. Menu or Back on the remote always takes you one step back.</p></details>
+    <details><summary>Does Kashkool sell films or shows?</summary><p>No. It plays what is on your servers and opens the streaming apps you already use. See the <a href="privacy.html">privacy page</a> for what stays where (short answer: with you).</p></details>
+    <p class="note">Tell us what broke and on which device. Screenshots help more than adjectives.</p>
+  </section>
+
+  <section id="ar" lang="ar" dir="rtl">
+    <h1>المساعدة</h1>
+    <p class="lede">يجمع كشكول كل رفّ يشاهد منه أهل البيت في مكتبة واحدة: خوادم Jellyfin الخاصة بكم، وخوادم الأصدقاء، وخدمات البث التي تدفعون اشتراكها. علِقت في شيء؟ راسلنا وسيردّ عليك إنسان.</p>
+    <p><a class="mail" href="mailto:hello@thecollectivemind.me?subject=Kashkool">راسل الدعم</a></p>
+
+    <h2>البداية</h2>
+    <ol>
+      <li><strong>بدعوة:</strong> اختر «عندي دعوة». على الهاتف، امسح الرمز الذي يريك إياه أحد أهل البيت؛ وعلى التلفاز، اكتب عنوان البيت والرمز.</li>
+      <li><strong>بخادمك الخاص:</strong> في الشاشة الأولى اختر «متقدّم: أضف خادمًا بنفسك» (ولاحقاً: الإعدادات، ثم أضف خادمًا). اكتب عنوانه الذي يبدأ بـ https، ثم سجّل الدخول باسم المستخدم وكلمة المرور في Jellyfin، أو بالاتصال السريع على التلفاز.</li>
+    </ol>
+
+    <h2>أسئلة</h2>
+    <details><summary>الخادم يقول إنه نائم</summary><p>لم يستطع كشكول الوصول إليه في الوقت المناسب. تأكد أن الجهاز الذي يعمل عليه مستيقظ ومتصل. يواصل كشكول المحاولة في الخلفية، ويعرض العنوان نفسه من خادم آخر إن كان عنده.</p></details>
+    <details><summary>عنوان خادمي مرفوض</summary><p>يتصل كشكول عبر https فقط، كي لا تمرّ بيانات دخولك مكشوفة. استخدم عنوان https لخادمك (عنوان Tailscale الذي ينتهي بـ <code>ts.net</code> يعمل)، لا <code>http://192.168…</code>.</p></details>
+    <details><summary>فيلم لا يعمل</summary><p>اضغط «حاول مجدداً»، أو «اختر نسخة أخرى» إن كانت عند صديق أيضاً. وإن كان الملف تالفاً على الخادم، يقول لك كشكول ذلك، ويستطيع صاحب الخادم استبداله.</p></details>
+    <details><summary>لا ترجمة بلغتي</summary><p>في المشغّل، افتح الترجمة واختر «ابحث عن ترجمة…». يحتاج خادمك إلى إضافة للترجمات، ويحتاج حسابك إلى صلاحية إدارتها، وكشكول يخبرك أيّهما ينقص.</p></details>
+    <details><summary>«أين أشاهده» فارغ</summary><p>إجابات خدمات البث تأتي من خدمة كشكول الخاصة ببيتك. ومن دونها، يبقى كشكول يشغّل كل ما على خوادمك.</p></details>
+    <details><summary>العربية أم الإنجليزية؟</summary><p>الإعدادات، ثم اللغة. يتبع كشكول لغة جهازك افتراضياً، ويقلب الواجهة كلها من اليمين إلى اليسار بالعربية.</p></details>
+    <details><summary>Apple TV وAndroid TV</summary><p>التطبيق نفسه يعمل على الاثنين. سجّل الدخول بالاتصال السريع كي لا تكتب كلمة مرور بجهاز التحكم. وزر القائمة أو الرجوع يعيدك دائماً خطوة إلى الوراء.</p></details>
+    <details><summary>هل يبيع كشكول أفلاماً أو مسلسلات؟</summary><p>لا. إنه يشغّل ما على خوادمك ويفتح تطبيقات البث التي تستخدمها أصلاً. انظر <a href="privacy.html#ar">صفحة الخصوصية</a> لتعرف أين يبقى كل شيء (باختصار: عندك).</p></details>
+    <p class="note">أخبرنا ما الذي تعطّل وعلى أي جهاز. لقطة شاشة واحدة تغني عن وصف طويل.</p>
+  </section>
+
+  <footer>© 2026 The Collective Mind FZE · <a href="privacy.html">Privacy</a> · <a href="privacy.html#ar" lang="ar">الخصوصية</a></footer>
+</div>
+</body>
+</html>
